@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="form-inline my-2 my-lg-0 mx-auto" style="width: 80%;">
                 <input class="form-control" style="width: 90%;" type="search" placeholder="Ingresa nombre del profesor o clave de la materia" aria-label="Search">
-                <button class="btn btn-outline-info my-2 my-sm-0 mx-auto" type="submit">Buscar</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0 mx-auto" type="submit">Buscar</button>
             </form>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">

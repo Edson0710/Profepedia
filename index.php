@@ -30,7 +30,7 @@
               </div>
               <div class="row">
                 <div class="col-md-12"> <input type="submit"
-                    class="btn btn-info btn-md btn-block waves-effect text-center m-b-20" name="submit" value="Sign Up">
+                    class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" name="submit" value="Sign Up">
                 </div>
               </div>
               <div class="or-container">
