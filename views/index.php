@@ -1,4 +1,4 @@
-<?php require_once('./includes/header.php');?>
+<?php require_once('./includes/header.php'); ?>
 
 
 <div class="container top-buffer bottom-buffer">
@@ -16,15 +16,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($maestros as $maestro): ?>
+                        <?php foreach ($maestros as $maestro) : ?>
                             <tr>
-                                <td><a href="controllers/panel_profesor_controller.php?id=<?=$maestro->id?>"><?=$maestro->nombre?></a></td>
+                                <td><a href="controllers/panel_profesor_controller.php?id=<?= $maestro->id ?>"><?= $maestro->nombre ?></a></td>
                                 <td>61</td>
                             </tr>
-                       <?php endforeach; ?>
+                        <?php endforeach; ?>
 
                 </table>
-                <a class="btn btn-agregar my-3" href="controllers/">Agregar profesor</a>
+                <a class="btn btn-agregar my-3" href="controllers/agregar_profesor_controller.php">Agregar profesor</a>
             </div>
 
         </div>
@@ -37,27 +37,28 @@
                         </div>
                         <div class="card-text px-3">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="first_name" value="" placeholder="Nombre"
-                                    id="first_name">
+                                <input type="text" class="form-control" name="first_name" value="" placeholder="Nombre" id="first_name">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="email" value="" placeholder="Correo"
-                                    id="email">
+                                <input type="text" class="form-control" name="email" value="" placeholder="Correo" id="email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Contraseña"
-                                    value="" id="password">
+                                <input type="password" class="form-control" name="password" placeholder="Contraseña" value="" id="password">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password_confirm"
-                                    placeholder="Repetir contraseña" value="" id="password_confirm">
+                                <input type="password" class="form-control" name="password_confirm" placeholder="Repetir contraseña" value="" id="password_confirm">
                             </div>
                             <div class="row">
-                                <div class="col-md-12"> <input type="submit"
-                                        class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20"
-                                        name="submit" value="Sign Up">
+                                <div class="col-md-12"> <input type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" name="submit" value="Sign Up">
                                 </div>
                             </div>
+                            <?php if ((isset($_POST['first_name']))) {
+                                if($usuarioM->addUser($_POST['first_name'], $_POST['email'], $_POST['password'], $_POST['password_confirm'])){
+                                    echo "<div>Usuario creado con exito</div>";
+                                }else{
+                                    echo "<div>Error al crear usuario</div>";
+                                }
+                            } ?>
                             <div class="or-container">
                                 <div class="line-separator"></div>
                                 <div class="or-label">or</div>
@@ -71,8 +72,7 @@
                                     </a>
                                 </div>
                             </div> <br>
-                            <p class="text-inverse text-center">¿Ya tienes cuenta? <a href="" data-toggle="modal"
-                                    data-target="#exampleModal" data-abc="true">Sign In</a></p>
+                            <p class="text-inverse text-center">¿Ya tienes cuenta? <a href="" data-toggle="modal" data-target="#exampleModal" data-abc="true">Sign In</a></p>
                         </div>
                     </div>
                 </div>
@@ -81,8 +81,8 @@
     </div>
 </div>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#example').DataTable();
     });
 </script>
-<?php require_once('includes/footer.php');?>
+<?php require_once('includes/footer.php'); ?>

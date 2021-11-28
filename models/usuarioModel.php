@@ -6,5 +6,15 @@ class UsuariosModel extends ModeloBase{
         $this->table="usuario";
         parent::__construct($this->table);
     }
+
+    public function addUser($nombre, $correo, $contrasenia, $contrasenia_rep)
+    {
+        if($contrasenia != $contrasenia_rep){
+            return false;
+        }
+
+        $query = $this->db->query("INSERT usuario (nombre, correo, contrasenia) VALUES ('$nombre', '$correo', '$contrasenia')");
+
+        return $query;
+    }
 }
-?>
