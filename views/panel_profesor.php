@@ -54,7 +54,11 @@
                         href="#nav-home-<?=$materia->id?>" role="tab" aria-controls="nav-home-<?=$materia->id?>"
                         aria-selected="true"><?=$materia->clave?></a>
                     <?php endforeach;?>
+                    <a class="nav-item nav-link" id="nav-add"
+                        href="#" role="tab" aria-controls="nav-add"
+                        aria-selected="true" style="width: 10%;">Agregar</a>
                 </div>
+                
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <?php foreach($materias as $materia):?>
@@ -72,9 +76,9 @@
                         <div class="col-lg-12 text-left comentario">
                             <h5><?= $review->anonimo == 0 ? $review->nombre : "Anónimo"?></h5>
                             <ul class="list-inline tags">
-                                <li class="list-inline-item">Tag 1</li>
-                                <li class="list-inline-item">Tag 2</li>
-                                <li class="list-inline-item">Tag 3</li>
+                                <li class="list-inline-item"><?=$review->tipo?></li>
+                                <li class="list-inline-item"><?='Tarea: '.$review->tareas?></li>
+                                <li class="list-inline-item"><?='Examen: '.$review->examenes?></li>
                             </ul>
                             <p><?=$review->contenido?></p>
                             <p class="likes">
