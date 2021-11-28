@@ -7,7 +7,7 @@ class ModeloBase{
     public function __construct($table) {
         $this->table=(string) $table;
          
-        require_once 'C:\xampp\htdocs\conectar.php'; 
+        require_once 'conectar.php'; 
         $this->conectar=new Conectar();
         $this->db=$this->conectar->conexion();
     }
@@ -22,12 +22,12 @@ class ModeloBase{
      
     public function getAll(){
         $query=$this->db->query("SELECT * FROM $this->table");
-          
-        while ($row = $query->fetch_object()) {
-           $resultSet[]=$row;
+        $array=array();
+        while($row=$query->fetch_assoc()){
+            $array[]=$row;
         }
-         
-        return $resultSet;
+
+        return $array;
     }
      
     public function getBy($column,$value){

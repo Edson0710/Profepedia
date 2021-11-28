@@ -15,6 +15,7 @@ class Conectar{
 
     public function conexion(){
         $conn = mysqli_connect($this->servername, $this->user, $this->password, $this->dbName);
+        return $conn;
     }
 }
 
