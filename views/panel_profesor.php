@@ -63,7 +63,7 @@
                         <div class="col-lg-12 text-center py-4">
                             <h3><?=$materia->materia?></h3>
                             <h1 style="color: #888;">10</h1>
-                            <a href="" class="btn btn-evaluar mt-3">Evaluar al profesor</a>
+                            <a href="../controllers/calificar_profesor_controller.php?id=<?=$id?>&clave=<?=$materia->clave?>" class="btn btn-evaluar mt-3">Evaluar al profesor</a>
                         </div>
                         <?php
                             $reviews = $reviewsModel->getReviewsMateria($materia->idmateria, $materia->idmaestro);

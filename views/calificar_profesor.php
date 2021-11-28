@@ -1,4 +1,4 @@
-<?php require_once('./includes/header.php'); ?>
+<?php require_once('../includes/header.php'); ?>
 
 <div class="container top-buffer bottom-buffer">
   <div class="row justify-content-center">
@@ -144,4 +144,4 @@
 <?php
 //  base_url() 
 ?>
-<?php require_once('includes/footer.php'); ?>
+<?php require_once('../includes/footer.php'); ?>
