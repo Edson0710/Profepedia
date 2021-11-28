@@ -1,9 +1,9 @@
 <?php
-class UsuariosModel extends ModeloBase{
+class ReviewModel extends ModeloBase{
     private $table;
      
     public function __construct(){
-        $this->table="Review";
+        $this->table="review";
         parent::__construct($this->table);
     }
 }

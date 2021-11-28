@@ -3,7 +3,7 @@ class PlantelesModel extends ModeloBase{
     private $table;
      
     public function __construct(){
-        $this->table="Planteles";
+        $this->table="planteles";
         parent::__construct($this->table);
     }
 }
