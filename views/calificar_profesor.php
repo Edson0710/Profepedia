@@ -23,15 +23,15 @@
                                 <h5 class="text-center">Cantidad de tareas</h5>
                                 <div class="row justify-content-center">
                                     <div class="col form-check ml-4">
-                                        <input class="form-check-input" type="radio" name="cantTareas" value="POCAS" id="cantTareas1" required>
+                                        <input class="form-check-input" type="radio" name="cantTareas" value="Pocas" id="cantTareas1" required>
                                         <label class="form-check-label tag-check" for="cantTareas1">Pocas</label>
                                     </div>
                                     <div class="col form-check">
-                                        <input class="form-check-input" type="radio" name="cantTareas" value="NORMAL" id="cantTareas2">
+                                        <input class="form-check-input" type="radio" name="cantTareas" value="Normal" id="cantTareas2">
                                         <label class="form-check-label tag-check" for="cantTareas2">Normal</label>
                                     </div>
                                     <div class="col form-check">
-                                        <input class="form-check-input" type="radio" name="cantTareas" value="MUCHAS" id="cantTareas3">
+                                        <input class="form-check-input" type="radio" name="cantTareas" value="Muchas" id="cantTareas3">
                                         <label class="form-check-label tag-check" for="cantTareas3">Muchas</label>
                                     </div>
                                 </div>
@@ -41,16 +41,16 @@
                                 <h5 class="text-center">Dificultad de los exámenes</h5>
                                 <div class="row justify-content-center">
                                     <div class="col form-check ml-4">
-                                        <input class="form-check-input" type="radio" name="dificultad" id="dificultad1" value="BAJA" required>
-                                        <label class="form-check-label tag-check" for="dificultad1">Baja</label>
+                                        <input class="form-check-input" type="radio" name="dificultad" id="dificultad1" value="Fácil" required>
+                                        <label class="form-check-label tag-check" for="dificultad1">Fácil</label>
                                     </div>
                                     <div class="col form-check">
-                                        <input class="form-check-input" type="radio" name="dificultad" value="NORMAL" id="dificultad2">
+                                        <input class="form-check-input" type="radio" name="dificultad" value="Normal" id="dificultad2">
                                         <label class="form-check-label tag-check" for="dificultad2">Normal</label>
                                     </div>
                                     <div class="col form-check">
-                                        <input class="form-check-input" type="radio" name="dificultad" value="ALTA" id="dificultad3">
-                                        <label class="form-check-label tag-check" for="dificultad3">Alta</label>
+                                        <input class="form-check-input" type="radio" name="dificultad" value="Difícil" id="dificultad3">
+                                        <label class="form-check-label tag-check" for="dificultad3">Difícil</label>
                                     </div>
                                 </div>
                             </div>
@@ -59,15 +59,15 @@
                                 <h5 class="text-center">Forma de trabajo</h5>
                                 <div class="row justify-content-center">
                                     <div class="col form-check ml-4">
-                                        <input class="form-check-input" type="radio" name="formaTrabajo" id="formaTrabajo1" value="VIRTUAL" required>
+                                        <input class="form-check-input" type="radio" name="formaTrabajo" id="formaTrabajo1" value="Virtual" required>
                                         <label class="form-check-label tag-check" for="formaTrabajo1">Virtual</label>
                                     </div>
                                     <div class="col form-check">
-                                        <input class="form-check-input" type="radio" name="formaTrabajo" id="formaTrabajo2" value="HIBRIDO">
-                                        <label class="form-check-label tag-check" for="formaTrabajo2">Híbrido</label>
+                                        <input class="form-check-input" type="radio" name="formaTrabajo" id="formaTrabajo2" value="Híbrida">
+                                        <label class="form-check-label tag-check" for="formaTrabajo2">Híbrida</label>
                                     </div>
                                     <div class="col form-check">
-                                        <input class="form-check-input" type="radio" name="formaTrabajo" id="formaTrabajo3" value="PRESENCIAL">
+                                        <input class="form-check-input" type="radio" name="formaTrabajo" id="formaTrabajo3" value="Presencial">
                                         <label class="form-check-label tag-check" for="formaTrabajo3">Presencial</label>
                                     </div>
                                 </div>
