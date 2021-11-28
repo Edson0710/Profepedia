@@ -4,7 +4,7 @@
 
 class ModeloBase{
     private $table;
-    private $db;
+    protected $db;
     private $conectar;
     private $count = 2;
  
