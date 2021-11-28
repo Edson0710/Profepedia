@@ -16,7 +16,18 @@
                             <div class="form-group">
                                 <input type="text" style="text-align: center;" class="form-control-plaintext" name="idMaestro" value="<?= $maestro->id ?>" id="name" readonly hidden>
                                 <input type="text" style="text-align: center;" class="form-control-plaintext" name="name" value="<?= $maestro->nombre ?>" id="name" readonly>
+                                <?php if($clave == '0'): ?>
+                                <div class="col my-1">
+                                    <label class="mr-sm-2" for="claveMateria">Materia</label>
+                                    <select class="custom-select" name="claveMateria" id="claveMateria" required>
+                                        <?php foreach($claves as $clave): ?>
+                                            <option value="<?= $clave->idmateria ?>"><?= $clave->idmateria.' - '.$clave->materia ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                </div>
+                                <?php else : ?>
                                 <input type="text" style="text-align: center;" class="form-control-plaintext" name="claveMateria" value="<?= $clave ?>" id="name" readonly>
+                                <?php endif ?>
                             </div>
                             <!-- Cantidad de tareas -->
                             <div class="form-group">
