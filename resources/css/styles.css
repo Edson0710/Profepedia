@@ -1,25 +1,32 @@
-body{
+body {
     background: url('../img/background.jpg');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+    margin: 0;
+    margin-bottom: 40px;
 }
 
-body .main{
+body .main {
     color: white;
 }
 
-
-.top-buffer{
-    margin-top:  64px;
-}
-.bottom-buffer{
-    margin-bottom: 64px;
+body .main p {
+    font-size: 20px;
 }
 
-.rojo{
+.rojo {
     background-color: red;
 }
+
+.top-buffer {
+    margin-top:82px;
+}
+
+.bottom-buffer {
+    margin-bottom: 164px;
+}
+
 
 .or-container {
     align-items: center;
@@ -44,4 +51,162 @@ body .main{
     color: #545454;
     background-color: #ffffff;
     box-shadow: 0 1px 2px 1px #ddd
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 0.9rem;
+    }
+}
+    
+@media screen and (max-width: 575px) {
+    html {
+        font-size: 0.7rem;
+    }
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+.table-container {
+    background-color: white;
+    color: black;
+    padding: 12px;
+    border-radius: 4px;
+    opacity: 0.9;
+}
+
+.login-container {
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+    opacity: 0.9;
+}
+
+.panel-profesor {
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+    opacity: 0.9;
+}
+
+.profesor-header {
+    background: #04244d;
+    color: white;
+}
+
+.project-tab {
+    padding: 10%;
+    margin-top: -8%;
+}
+.project-tab #tabs{
+    background: #007b5e;
+    color: #eee;
+}
+.project-tab #tabs h6.section-title{
+    color: #eee;
+}
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #0062cc;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+.project-tab .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #0062cc;
+    font-size: 16px;
+    font-weight: 600;
+}
+.project-tab .nav-link:hover {
+    border: none;
+}
+.project-tab thead{
+    background: #f3f3f3;
+    color: #333;
+}
+.project-tab a{
+    text-decoration: none;
+    color: #333;
+    /* font-weight: 600; */
+}
+
+.comentario{
+    border-bottom: 1px solid #999;
+    padding: 20px 50px 20px 50px;
+}
+
+.tags li{
+    background: #ddd;
+    border-radius: 16px;
+    padding: 3px 20px 3px 20px;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.tags-header li{
+    background: #ddd;
+    border-radius: 16px;
+    padding: 3px 20px 3px 20px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: black;
+}
+
+.tag-count{
+    background: red;
+    color: white;
+    margin-left: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(0%, -50%);
+}
+
+.likes{
+    font-size: 1.2rem;
+}
+
+.likes i{
+    color: #333;
+    margin-right: 3px;
+}
+
+.likes span{
+    margin-right: 3px;
+}
+
+.likes i:hover{
+    color: #0062cc;
+    cursor: pointer;
+}
+
+.btn-evaluar{
+    background: #0062cc;
+    color: white;
+    border-radius: 4px;
+    width: 80%;
+}
+
+.btn-evaluar:hover{
+    background: #001866;
+    color: white;
+    border-radius: 4px;
+    width: 80%;
 }
