@@ -210,3 +210,20 @@ footer {
     border-radius: 4px;
     width: 80%;
 }
+
+input[type="radio"]:checked+label{
+    background: #444;
+    color: white;
+}
+
+input[type="radio"]{
+    visibility: hidden;
+}
+
+.tag-check{
+    background: #ddd;
+    border-radius: 16px;
+    padding: 3px 20px 3px 20px;
+    margin-top: 5px;
+    font-size: 13px;
+}
