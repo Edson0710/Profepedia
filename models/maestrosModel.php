@@ -6,7 +6,7 @@ class MaestrosModel extends ModeloBase{
     private $table;
      
     public function __construct(){
-        $this->table="Maestros";
+        $this->table="maestros";
         parent::__construct($this->table);
     }
 }

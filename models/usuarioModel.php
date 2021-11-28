@@ -3,7 +3,7 @@ class UsuariosModel extends ModeloBase{
     private $table;
      
     public function __construct(){
-        $this->table="Usuario";
+        $this->table="usuario";
         parent::__construct($this->table);
     }
 }

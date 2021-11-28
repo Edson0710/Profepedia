@@ -1,9 +1,9 @@
 <?php
-class UsuariosModel extends ModeloBase{
+class TrabajaModel extends ModeloBase{
     private $table;
      
     public function __construct(){
-        $this->table="Trabaja";
+        $this->table="trabaja";
         parent::__construct($this->table);
     }
 }
