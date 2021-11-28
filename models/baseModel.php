@@ -25,8 +25,7 @@ class ModeloBase{
      
     public function getAll(){
         $query=$this->db->query("SELECT * FROM $this->table");
-        $array=array();
-        while($row=$query->fetch_assoc()){
+        while($row=$query->fetch_object()){
             $array[]=$row;
         }
 

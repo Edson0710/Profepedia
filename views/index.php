@@ -18,7 +18,7 @@
                     <tbody>
                         <?php foreach($maestros as $maestro): ?>
                             <tr>
-                                <td><a href="controllers/panel_profesor_controller.php?id=<?=$maestro['id']?>"><?=$maestro['nombre']?></a></td>
+                                <td><a href="controllers/panel_profesor_controller.php?id=<?=$maestro->id?>"><?=$maestro->nombre?></a></td>
                                 <td>61</td>
                             </tr>
                        <?php endforeach; ?>
