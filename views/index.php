@@ -16,34 +16,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="controllers/panel_profesor_controller.php">CAMARENA ROBLES, CARLOS</a></td>
-                            <td>61</td>
-                        </tr>
-                        <tr>
-                            <td>DAVALOS BOITES, MICHEL</td>
-                            <td>63</td>
-                        </tr>
-                        <tr>
-                            <td>ROMERO GASTELU, MARIA ELENA</td>
-                            <td>66</td>
-                        </tr>
-                        <tr>
-                            <td>MORALES RAMIREZ, THELMA ISABEL</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td>SANCHEZ SALAZAR, LUIS IGNACIO</td>
-                            <td>33</td>
-                        </tr>
-                        <tr>
-                            <td>ORTEGA SANCHEZ, NOE</td>
-                            <td>61</td>
-                        </tr>
-                        <tr>
-                            <td>LUQUE CHANG, ALBERTO</td>
-                            <td>59</td>
-                        </tr>
+                        <?php foreach($maestros as $maestro): ?>
+                            <tr>
+                                <td><a href="controllers/panel_profesor_controller.php?id=<?=$maestro['id']?>"><?=$maestro['nombre']?></a></td>
+                                <td>61</td>
+                            </tr>
+                       <?php endforeach; ?>
 
                 </table>
             </div>

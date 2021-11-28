@@ -1,9 +1,7 @@
 <?php
-// 
   
   require_once('models/maestrosModel.php');
-  $maestro = new MaestrosModel();
-  var_dump($maestro->getAll());
+  $maestros = new MaestrosModel();
+  $maestros = $maestros->getAll();
   require_once('views/index.php')
-  // 
 ?>

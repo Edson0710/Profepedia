@@ -1,13 +1,16 @@
 <?php
+
+
+
 class ModeloBase{
     private $table;
     private $db;
     private $conectar;
+    private $count = 2;
  
     public function __construct($table) {
         $this->table=(string) $table;
-         
-        require_once 'conectar.php'; 
+        count(explode('/',$_SERVER['REQUEST_URI'])) > $this->count ? require_once '../conectar.php' : require_once 'conectar.php';
         $this->conectar=new Conectar();
         $this->db=$this->conectar->conexion();
     }

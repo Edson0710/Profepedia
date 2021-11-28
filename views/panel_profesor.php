@@ -7,7 +7,7 @@
             <img src="../resources/img/default.jpg" width="16%" alt="logo" class="rounded-circle" style="min-width: 98px;">
         </div>
         <div class="col-lg-12 text-center mt-3">
-            <h4>NAVARRO BRIZUELA, EDSON DANIEL</h4>
+            <h4><?=$maestro->nombre?></h4>
             <h6>CUCEI</h6>
             <ul class="list-inline tags-header">
                 <li class="list-inline-item">
