@@ -1,6 +1,6 @@
 <?php require_once('../includes/header.php');?>
 
-<div class="container panel-profesor mt-4 bottom-buffer">
+<div class="container panel-profesor mt-5 bottom-buffer">
     <!-- <div class="panel-profesor"> -->
     <div class="row profesor-header py-4">
         <div class="col-lg-12 text-center">
@@ -70,7 +70,7 @@
                             foreach($reviews as $review):
                         ?>
                         <div class="col-lg-12 text-left comentario">
-                            <h5><?=$review->nombre?></h5>
+                            <h5><?= $review->anonimo == 0 ? $review->nombre : "Anónimo"?></h5>
                             <ul class="list-inline tags">
                                 <li class="list-inline-item">Tag 1</li>
                                 <li class="list-inline-item">Tag 2</li>
@@ -81,7 +81,9 @@
                                 <i class="fas fa-arrow-up"></i>
                                 <span><?=$review->votos?></span>
                                 <i class="fas fa-arrow-down"></i>
+                                <span style="font-size: 12px;" class="float-right"><i><?=$review->fecha?></i></span>
                             </p>
+                            
                         </div>
                         <?php endforeach;?>
                     </div>

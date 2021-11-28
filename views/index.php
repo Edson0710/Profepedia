@@ -24,6 +24,7 @@
                        <?php endforeach; ?>
 
                 </table>
+                <a class="btn btn-agregar my-3" href="controllers/">Agregar profesor</a>
             </div>
 
         </div>
