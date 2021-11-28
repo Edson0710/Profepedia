@@ -1,5 +1,8 @@
 <?php
-class UsuariosModel extends ModeloBase{
+
+require_once("baseModel.php");
+
+class MaestrosModel extends ModeloBase{
     private $table;
      
     public function __construct(){

@@ -7,7 +7,7 @@ class ModeloBase{
     public function __construct($table) {
         $this->table=(string) $table;
          
-        require_once 'Conectar.php'; //TODO archivo de conexión
+        require_once 'C:\xampp\htdocs\conectar.php'; 
         $this->conectar=new Conectar();
         $this->db=$this->conectar->conexion();
     }
