@@ -21,7 +21,7 @@
                                     <label class="mr-sm-2" for="claveMateria">Materia</label>
                                     <select class="custom-select" name="claveMateria" id="claveMateria" required>
                                         <?php foreach($claves as $clave): ?>
-                                            <option value="<?= $clave->idmateria ?>"><?= $clave->idmateria.' - '.$clave->materia ?></option>
+                                            <option value="<?= $clave->clave ?>"><?= $clave->clave.' - '.$clave->materia ?></option>
                                         <?php endforeach ?>
                                     </select>
                                 </div>
