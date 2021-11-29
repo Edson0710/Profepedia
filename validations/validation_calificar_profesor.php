@@ -2,6 +2,7 @@
     require_once('../models/reviewModel.php');    
     $modelo = new ReviewModel();
 
+    $idUsuario = $_POST['idUsuario'];
     $idMaestro = $_POST['idMaestro'];
     $clave = $_POST['claveMateria'];
 
@@ -14,12 +15,12 @@
     $comentarios = $_POST['comentarios'];
     $anonimo = (isset($_POST['anonimo']) ? '1' : '0');
 
-    $res = $modelo->setReviewMateria($cantTareas, $dificultad, $formaTrabajo, $calificacionAsistencia, $calificacionConocimientos, $calificacionDificultad, $comentarios, $anonimo, $idMaestro, $clave);
+    $res = $modelo->setReviewMateria($cantTareas, $dificultad, $formaTrabajo, $calificacionAsistencia, $calificacionConocimientos, $calificacionDificultad, $comentarios, $anonimo, $idMaestro, $clave, $idUsuario);
 
     if($res){
         header("Location: ../controllers/panel_profesor_controller.php?id=$idMaestro");
     } else {
         $_SESSION['error'] = "No se pudo insertar el comentario";
-        header("Location: ../views/panel_profesor");
+        header("Location: ../controllers/panel_profesor_controller.php?id=$idMaestro");
     }
 ?>

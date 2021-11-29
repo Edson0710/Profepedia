@@ -14,7 +14,8 @@
                         </div>
                         <div class="card-text px-4">
                             <div class="form-group">
-                                <input type="text" style="text-align: center;" class="form-control-plaintext" name="idMaestro" value="<?= $maestro->id ?>" id="name" readonly hidden>
+                                <input type="text" style="text-align: center;" class="form-control-plaintext" name="idUsuario" value="<?= $_SESSION['user']->id ?>" id="idUsuario" readonly hidden>
+                                <input type="text" style="text-align: center;" class="form-control-plaintext" name="idMaestro" value="<?= $maestro->id ?>" id="idMaestro" readonly hidden>
                                 <input type="text" style="text-align: center;" class="form-control-plaintext" name="name" value="<?= $maestro->nombre ?>" id="name" readonly>
                                 <?php if($clave == '0'): ?>
                                 <div class="col my-1">

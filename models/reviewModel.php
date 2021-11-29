@@ -30,8 +30,8 @@ class ReviewModel extends ModeloBase{
         return $resultSet;
     }
     
-    public function setReviewMateria($cantTareas, $examenes, $formaTrabajo, $calificacionAsistencia, $calificacionConocimientos, $calificacionDificultad, $comentarios, $anonimo, $idMaestro, $clave){
-        $query=$this->db->query("INSERT INTO $this->table VALUES(NULL, '$comentarios', $anonimo, $calificacionAsistencia, $calificacionConocimientos, '$formaTrabajo', '$cantTareas', '$examenes', $calificacionDificultad, 0, 1,'$clave', $idMaestro, CURDATE())");
+    public function setReviewMateria($cantTareas, $examenes, $formaTrabajo, $calificacionAsistencia, $calificacionConocimientos, $calificacionDificultad, $comentarios, $anonimo, $idMaestro, $clave, $idUsuario){
+        $query=$this->db->query("INSERT INTO $this->table VALUES(NULL, '$comentarios', $anonimo, $calificacionAsistencia, $calificacionConocimientos, '$formaTrabajo', '$cantTareas', '$examenes', $calificacionDificultad, 0, $idUsuario,'$clave', $idMaestro, CURDATE())");
 
         return $query;
     }
