@@ -4,6 +4,7 @@
 <div class="container top-buffer bottom-buffer">
     <div class="row mb-5">
         <div class="col-md-8 main">
+            <h1><?=isset($_SESSION['user']) ? $_SESSION['user']->nombre : 'Hola mundo!!' ?></h1>
             <h1>Bienvenidos a Profepedia</h1>
             <p>Somos una platafaforma que permite conocer lo que los alumnos opinan sobre sus profesores.</p>
 
