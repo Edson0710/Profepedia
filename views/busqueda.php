@@ -20,7 +20,7 @@
 
                                 ?>
                                 <p>
-                                    <span><?= $maestro->nombre ?></span>
+                                    <span><a href="../controllers/panel_profesor_controller.php?id=<?= $maestro->id ?>"><?= $maestro->nombre ?></a></span>
                                     <span class="float-right"><?= $prom ?></span>
                                 </p>
 
