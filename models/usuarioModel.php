@@ -13,6 +13,8 @@ class UsuariosModel extends ModeloBase{
             return false;
         }
 
+        $contrasenia = password_hash($contrasenia, PASSWORD_BCRYPT, ['cost'=>4]);
+
         $query = $this->db->query("INSERT usuario (nombre, correo, contrasenia) VALUES ('$nombre', '$correo', '$contrasenia')");
 
         return $query;

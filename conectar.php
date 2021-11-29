@@ -8,8 +8,8 @@ class Conectar{
 
     public function __construct(){
         $this -> password = "Administrador-2021";
-        $this -> user = "id18021049_admin";
-        $this -> dbName = "id18021049_profepedia";
+        $this -> user = "u300282865_admin";
+        $this -> dbName = "u300282865_profepedia";
         $this -> servername = "localhost";
     }
 
