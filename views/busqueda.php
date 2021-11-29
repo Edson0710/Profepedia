@@ -21,8 +21,13 @@
                                 ?>
                                 <p>
                                     <span><a href="../controllers/panel_profesor_controller.php?id=<?= $maestro->id ?>"><?= $maestro->nombre ?></a></span>
-                                    <span class="float-right"><?= $prom ?></span>
-                                </p>
+                                    <span class="float-right"><?= number_format($prom, 1) ?></span>
+                                    <?php
+                                    foreach ($imparteM->getBy("idmaestro", $maestro->id) as $materia) :
+                                    ?>
+                                <div><?= $materia->idmateria ?></div>
+                            <?php endforeach; ?>
+                            </p>
 
                             </div>
                         <?php endforeach; ?>
