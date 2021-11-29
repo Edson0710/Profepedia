@@ -13,9 +13,9 @@
     $res = $modeloMaestro->agregarMaestro($nombre);
 
     if($res != 0){
-        $modeloTrabaja->setTrabajo($centro, $nombre);
+        $modeloTrabaja->setTrabajo($centro, $res);
         $modeloImparte->setMateriaImpartida($res, $clave);
-        //header("Location: ../controllers/panel_profesor_controller.php?id=$res");
+        header("Location: ../controllers/panel_profesor_controller.php?id=$res");
     } else{
         $_SESSION['error'] = "Ese profesor ya está registrado";
         header("Location: ../controllers/agregar_profesor_controller.php");

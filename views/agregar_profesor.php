@@ -23,7 +23,7 @@
                                 <label for="clave">Clave de la materia</label>
                                 <select name="clave" class="custom-select" required>
                                     <?php foreach ($materias as $materia) : ?>
-                                        <option value="<?= $materia->id ?>"><?= $materia->clave ?> - <?= $materia->materia ?></option>
+                                        <option value="<?= $materia->clave ?>"><?= $materia->clave ?> - <?= $materia->materia ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
