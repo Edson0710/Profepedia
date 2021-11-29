@@ -10,6 +10,16 @@ class MaestrosModel extends ModeloBase{
         parent::__construct($this->table);
     }
 
+    public function buscarMaestro($pattern){
+        $query = $this->db->query("SELECT * FROM maestros WHERE nombre LIKE '%$pattern%'");
+        
+        while($row=$query->fetch_object()){
+            $array[]=$row;
+        }
+
+        return $array;
+    }
+
     public function agregarMaestro($nombre){
         $result = $this->db->query("SELECT * FROM maestros WHERE nombre = '$nombre'");
 

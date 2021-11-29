@@ -81,8 +81,8 @@ session_start();
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="form-inline my-2 my-lg-0 mx-auto" style="width: 80%;">
-                <input class="form-control" style="width: 90%;" type="search"
+            <form class="form-inline my-2 my-lg-0 mx-auto" style="width: 80%;" action="<?= count(explode('/', $_SERVER['REQUEST_URI'])) > $count ? '../controllers/busqueda_controller.php' : './controllers/busqueda_controller.php'; ?>" method="GET">
+                <input class="form-control" style="width: 90%;" type="search" name="pattern"
                     placeholder="Ingresa nombre del profesor o clave de la materia" aria-label="Search">
                 <button class="btn btn-outline-primary my-2 my-sm-0 mx-auto" type="submit">Buscar</button>
             </form>
