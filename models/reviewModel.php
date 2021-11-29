@@ -95,5 +95,10 @@ class ReviewModel extends ModeloBase{
         
         return $resultSet[0]->cal;
     }
+
+    public function updateVotos($id, $votos){
+        $query=$this->db->query("UPDATE $this->table SET votos = $votos WHERE id = $id");
+        return $query;
+    }
 }
 ?>
