@@ -11,7 +11,13 @@ class MaestrosModel extends ModeloBase{
     }
 
     public function buscarMaestro($pattern){
+        if (preg_match('~[0-9]+~', $pattern)) {
+         
+        }
+
         $query = $this->db->query("SELECT * FROM maestros WHERE nombre LIKE '%$pattern%'");
+
+        
         
         while($row=$query->fetch_object()){
             $array[]=$row;
