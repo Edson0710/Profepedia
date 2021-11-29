@@ -77,6 +77,7 @@
                         </div>
                         <?php
                             foreach($generales as $review):
+                                if($review->votos > -10):
                         ?>
                         <div class="col-lg-12 text-left comentario" id="<?=$review->id?>">
                             <h5><?= $review->anonimo == 0 ? $review->nombre : "Anónimo"?></h5>
@@ -95,7 +96,10 @@
                             </p>
 
                         </div>
-                        <?php endforeach;?>
+                        <?php
+                                endif;
+                            endforeach;
+                        ?>
                     </div>
                 </div>
                 <?php if(isset($materias)):?>
@@ -111,6 +115,7 @@
                         <?php
                             $reviews = $reviewsModel->getReviewsMateria($materia->idmateria, $materia->idmaestro);
                             foreach($reviews as $review):
+                                if($review->votos > -10):
                         ?>
                         <div class="col-lg-12 text-left comentario" id="<?=$review->id?>">
                             <h5><?= $review->anonimo == 0 ? $review->nombre : "Anónimo"?></h5>
@@ -128,7 +133,10 @@
                             </p>
 
                         </div>
-                        <?php endforeach;?>
+                        <?php 
+                                endif;
+                            endforeach;
+                        ?>
                     </div>
                 </div>
                 <?php endforeach;?>
