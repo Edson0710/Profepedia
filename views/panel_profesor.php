@@ -61,8 +61,8 @@
                         aria-selected="true"><?=$materia->clave?></a>
                     <?php endforeach;?>
                     <?php endif;?>
-                    <a class="nav-item nav-link" id="nav-add" href="#" role="tab" aria-controls="nav-add"
-                        aria-selected="true" style="width: 10%;">Agregar</a>
+                    <a class="nav-item nav-link" id="nav-add" role="tab" aria-controls="nav-add"
+                        aria-selected="true" style="width: 10%;" href="../controllers/agregar_materia_controller.php?id=<?=$id?>">Agregar</a>
                 </div>
 
             </nav>
