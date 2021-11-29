@@ -2,11 +2,13 @@
   
   require_once('models/maestrosModel.php');
   require_once('models/usuarioModel.php');
+  require_once('models/reviewModel.php');
   require_once('google-api/vendor/autoload.php');
 
   $maestros = new MaestrosModel();
   $maestros = $maestros->getAll();
   $usuarioM = new UsuariosModel();
+  $reviewModel = new ReviewModel();
 
 /*
   // init configuration

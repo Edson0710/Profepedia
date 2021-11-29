@@ -44,15 +44,10 @@ session_start();
 </head>
 
 <body>
-    <?php
-                                    
+    <?php              
     count(explode('/', $_SERVER['REQUEST_URI'])) > $count ? require_once '../models/usuarioModel.php' : require_once './models/usuarioModel.php';
     $usuarioMod = new UsuariosModel();
-
-    if(isset($_SESSION["user"])){
-        echo ('<h5>Sesión iniciada </h5>');
-    }
-
+    
     if ((isset($_POST['email-login']))) {
         $usuario =  $usuarioMod->getBy("correo", $_POST['email-login']);
         if ($usuario == NULL) {

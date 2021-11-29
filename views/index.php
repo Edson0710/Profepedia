@@ -19,7 +19,13 @@
                         <?php foreach ($maestros as $maestro) : ?>
                             <tr>
                                 <td><a href="controllers/panel_profesor_controller.php?id=<?= $maestro->id ?>"><?= $maestro->nombre ?></a></td>
-                                <td>61</td>
+                                <?php
+                                $reviewModel = new ReviewModel();
+                                $calConocimientos = $reviewModel->getConocimientos($maestro->id);
+                                $calAsistencia = $reviewModel->getAsistencia($maestro->id);
+                                $calGeneral = ($calAsistencia + $calConocimientos)/2;
+                                ?>
+                                <td><?=$calGeneral?></td>
                             </tr>
                         <?php endforeach; ?>
 
@@ -34,7 +40,7 @@
                     <div class="card-block">
                         <div class="card-title p-3">
                             <h4 class="text-center"><?=$_SESSION['user']->nombre?></h4>
-                            <a class="btn btn-agregar mt-3" href="">Mis Reviews</a>
+                            <a class="btn btn-agregar mt-3" href="controllers/mis_reviews_controller.php">Mis Reviews</a>
                         </div>
                         <div class="card-text px-3">
                             

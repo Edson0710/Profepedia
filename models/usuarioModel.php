@@ -1,4 +1,5 @@
 <?php
+require_once 'baseModel.php';
 class UsuariosModel extends ModeloBase{
     private $table;
      
