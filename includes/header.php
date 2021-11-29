@@ -76,7 +76,7 @@ session_start();
                         <a class="nav-link" href="<?= count(explode('/', $_SERVER['REQUEST_URI'])) > $count ? '../validations/cerrar_sesion.php' : './validations/cerrar_sesion.php'; ?>">Cerrar
                             sesión <span class="sr-only">(current)</span></a>
                     <?php else : ?>
-                        <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal"><span class="text-danger"><?= $error ?></span>Iniciar sesión <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal"><span class="text-danger"><?= $error ?></span>  Iniciar sesión <span class="sr-only">(current)</span></a>
                     <?php endif; ?>
                 </li>
             </ul>
