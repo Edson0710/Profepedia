@@ -1,4 +1,7 @@
 <?php
+
+require_once("baseModel.php");
+
 class ImparteModel extends ModeloBase{
     private $table;
      
@@ -15,6 +18,11 @@ class ImparteModel extends ModeloBase{
         }
          
         return $resultSet;
+    }
+
+    public function buscarMaestroMateria($id, $clave){
+        $result = $this->db->query("SELECT * FROM imparte WHERE idmaestro = $id AND idmateria = '$clave'");
+        return $result->num_rows;
     }
 
     public function setMateriaImpartida($idMaestro, $claveMateria){
