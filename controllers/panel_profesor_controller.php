@@ -10,11 +10,11 @@
     $maestro = $maestro[0];
     $materias = $materias->getMaterias($id);
     $tagTarea = $reviewsModel->getTagTarea($id);
-    $tagTarea = $tagTarea[0];
+    $tagTarea = isset($tagTarea[0]) ? $tagTarea[0] : null;
     $tagExamen = $reviewsModel->getTagExamen($id);
-    $tagExamen = $tagExamen[0];
+    $tagExamen = isset($tagExamen[0]) ? $tagExamen[0] : null;
     $tagTipo = $reviewsModel->getTagTipo($id);
-    $tagTipo = $tagTipo[0];
+    $tagTipo = isset($tagTipo[0]) ? $tagTipo[0] : null;
     $calAsistencia = $reviewsModel->getAsistencia($id);
     $calConocimientos = $reviewsModel->getConocimientos($id);
     $calDificultad = $reviewsModel->getDificultad($id);

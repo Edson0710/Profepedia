@@ -11,6 +11,7 @@
             <h4><?=$maestro->nombre?></h4>
             <h6>CUCEI</h6>
             <ul class="list-inline tags-header">
+                <?php if(count($generales)>0):?>
                 <li class="list-inline-item">
                     <?=$tagTipo->tipo?>
                     <span class="tag-count"><?=$tagTipo->cont?></span>
@@ -23,6 +24,7 @@
                     Examen: <?=$tagExamen->examenes?>
                     <span class="tag-count"><?=$tagExamen->cont?></span>
                 </li>
+                <?php endif;?>
             </ul>
             <div class="row mt-4">
                 <div class="col-3 text-center">
@@ -52,11 +54,13 @@
                 <a class="nav-item nav-link active" id="nav-home-tab-general" data-toggle="tab"
                         href="#nav-home-general" role="tab" aria-controls="nav-home-general"
                         aria-selected="true">General</a>
+                    <?php if(isset($materias)):?>
                     <?php foreach($materias as $materia):?>
                     <a class="nav-item nav-link" id="nav-home-tab-<?=$materia->id?>" data-toggle="tab"
                         href="#nav-home-<?=$materia->id?>" role="tab" aria-controls="nav-home-<?=$materia->id?>"
                         aria-selected="true"><?=$materia->clave?></a>
                     <?php endforeach;?>
+                    <?php endif;?>
                     <a class="nav-item nav-link" id="nav-add"
                         href="#" role="tab" aria-controls="nav-add"
                         aria-selected="true" style="width: 10%;">Agregar</a>
@@ -83,9 +87,9 @@
                             </ul>
                             <p><?=$review->contenido?></p>
                             <p class="likes">
-                                <i class="fas fa-arrow-up"></i>
-                                <span><?=$review->votos?></span>
-                                <i class="fas fa-arrow-down"></i>
+                                <i id="up-<?=$review->id?>" class="up fas fa-arrow-up"></i>
+                                <span id="votos"><?=$review->votos?></span>
+                                <i class="down fas fa-arrow-down"></i>
                                 <span style="font-size: 12px;" class="float-right"><i><?=$review->fecha?></i></span>
                             </p>
                             
@@ -93,6 +97,7 @@
                         <?php endforeach;?>
                     </div>
                 </div>
+                <?php if(isset($materias)):?>
                 <?php foreach($materias as $materia):?>
                 <div class="tab-pane fade show" id="nav-home-<?=$materia->id?>" role="tabpanel" aria-labelledby="nav-home-tab-<?=$materia->id?>">
                     <div class="row">
@@ -113,9 +118,9 @@
                             </ul>
                             <p><?=$review->contenido?></p>
                             <p class="likes">
-                                <i class="fas fa-arrow-up"></i>
-                                <span><?=$review->votos?></span>
-                                <i class="fas fa-arrow-down"></i>
+                                <i id="up-<?=$review->id?>" class="up fas fa-arrow-up"></i>
+                                <span id="votos"><?=$review->votos?></span>
+                                <i class="down fas fa-arrow-down"></i>
                                 <span style="font-size: 12px;" class="float-right"><i><?=$review->fecha?></i></span>
                             </p>
                             
@@ -124,8 +129,41 @@
                     </div>
                 </div>
                 <?php endforeach;?>
+                <?php endif;?>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        console.log("ready!");
+        $('.up').click(function(){
+            if($(this).hasClass('up-active')){
+                
+                console.log("no esta activo");
+                $(this).css('color', '#0062cc');
+                $(this).parent().find('.down').css('color', '#333');
+                var votos = $(this).parent().find('#votos').text();
+                votos = parseInt(votos);
+                votos++;
+                $(this).parent().find('#votos').text(votos);
+                $(this).addClass('up-activate');
+                // $(this).removeClass('up-active');
+                // $(this).addClass('up');
+            } else{
+                console.log("ya esta activo");
+            }
+            
+        });
+        $('.down').click(function(){
+            $(this).css('color', '#0062cc');
+            $(this).parent().find('.up').css('color', '#333');
+            var votos = $(this).parent().find('#votos').text();
+            // Convertir a entero
+            votos = parseInt(votos);
+            votos--;
+            $(this).parent().find('#votos').text(votos);
+        });
+    });
+</script>
 <?php require_once('../includes/footer.php');?>
