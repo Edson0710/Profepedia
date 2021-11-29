@@ -12,6 +12,6 @@
         $res = $modeloImparte->setMateriaImpartida($id, $clave);
     } else{
         $_SESSION['error'] = "Ese profesor ya tiene esa materia registrada";
-        header("Location: ../controllers/agregar_materia_controller.php");
+        header("Location: ../controllers/agregar_materia_controller.php?id=$id");
     }
 ?>
