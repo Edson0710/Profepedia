@@ -9,13 +9,8 @@ class UsuariosModel extends ModeloBase{
         parent::__construct($this->table);
     }
 
-    private function endsWith($haystack, $needle)
-    {
-        $length = strlen($needle);
-        if (!$length) {
-            return true;
-        }
-        return substr($haystack, -$length) === $needle;
+    function endsWith($haystack, $needle) {
+        return substr_compare($haystack, $needle, -strlen($needle)) === 0;
     }
 
     public function addUser($nombre, $correo, $contrasenia, $contrasenia_rep)
