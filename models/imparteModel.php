@@ -17,6 +17,9 @@ class ImparteModel extends ModeloBase{
         return $resultSet;
     }
 
-    
+    public function setMateriaImpartida($idMaestro, $claveMateria){
+        $this->db->query("INSERT INTO imparte VALUES (NULL, $idMaestro, '$claveMateria')");
+        return;
+    }
 }
 ?>

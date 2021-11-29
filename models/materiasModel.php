@@ -1,4 +1,7 @@
 <?php
+
+require_once("baseModel.php");
+
 class MateriasModel extends ModeloBase{
     private $table;
      
