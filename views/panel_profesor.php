@@ -61,8 +61,10 @@
                         aria-selected="true"><?=$materia->clave?></a>
                     <?php endforeach;?>
                     <?php endif;?>
-                    <a class="nav-item nav-link" id="nav-add" role="tab" aria-controls="nav-add"
+                    <?php if(isset($_SESSION['user'])):?>
+                    <a class="nav-item nav-link " id="nav-add" role="tab" aria-controls="nav-add"
                         aria-selected="true" style="width: 10%;" href="../controllers/agregar_materia_controller.php?id=<?=$id?>">Agregar</a>
+                    <?php endif;?>
                 </div>
 
             </nav>
@@ -73,7 +75,7 @@
                         <div class="col-lg-12 text-center py-4">
                             <h3>General</h3>
                             <a href="../controllers/calificar_profesor_controller.php?id=<?=$id?>&clave=0"
-                                class="btn btn-evaluar mt-3">Evaluar al profesor</a>
+                                class="btn btn-evaluar mt-3 <?=(!isset($_SESSION['user'])) ? 'disabled' : '' ?>">Evaluar al profesor</a>
                         </div>
                         <?php
                             foreach($generales as $review):
@@ -88,12 +90,21 @@
                                 <li class="list-inline-item"><?='Examen: '.$review->examenes?></li>
                             </ul>
                             <p><?=$review->contenido?></p>
+                            <?php if(isset($_SESSION['user'])):?>
                             <p class="likes">
-                                <i id="up-<?=$review->id?>" class="up fas fa-arrow-up"></i>
+                                <i id="up-<?=$review->id?>" class="up fas fa-arrow-up "></i>
                                 <span id="votos" class="neutro"><?=$review->votos?></span>
                                 <i class="down fas fa-arrow-down"></i>
                                 <span style="font-size: 12px;" class="float-right"><i><?=$review->fecha?></i></span>
                             </p>
+                            <?php else:?>
+                                <p class="likes">
+                                <i class="fas fa-arrow-up "></i>
+                                <span id="votos" class="neutro"><?=$review->votos?></span>
+                                <i class="fas fa-arrow-down"></i>
+                                <span style="font-size: 12px;" class="float-right"><i><?=$review->fecha?></i></span>
+                            </p>
+                            <?php endif;?>
 
                         </div>
                         <?php
@@ -110,7 +121,7 @@
                         <div class="col-lg-12 text-center py-4">
                             <h3><?=$materia->materia?></h3>
                             <a href="../controllers/calificar_profesor_controller.php?id=<?=$id?>&clave=<?=$materia->clave?>"
-                                class="btn btn-evaluar mt-3">Evaluar al profesor</a>
+                                class="btn btn-evaluar mt-3 <?=(!isset($_SESSION['user'])) ? 'disabled' : '' ?>">Evaluar al profesor</a>
                         </div>
                         <?php
                             $reviews = $reviewsModel->getReviewsMateria($materia->idmateria, $materia->idmaestro);
