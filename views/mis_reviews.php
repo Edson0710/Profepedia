@@ -8,7 +8,7 @@
                 style="min-width: 98px;">
         </div>
         <div class="col-lg-12 text-center mt-3">
-            <h4>USUARIO</h4>
+            <h4><?=$_SESSION['user']->nombre?></h4>
         </div>
     </div>
     <div class="row">
@@ -24,16 +24,11 @@
                 <div class="tab-pane fade show active" id="nav-home-general" role="tabpanel"
                     aria-labelledby="nav-home-tab-general">
                     <div class="row">
-                        <div class="col-lg-12 text-center py-4">
-                            <h3>General</h3>
-                            <a href="../controllers/calificar_profesor_controller.php?id=<?=$id?>&clave=0"
-                                class="btn btn-evaluar mt-3 <?=(!isset($_SESSION['user'])) ? 'disabled' : '' ?>">Evaluar al profesor</a>
-                        </div>
                         <?php
                             foreach($generales as $review):
                         ?>
                         <div class="col-lg-12 text-left comentario" id="<?=$review->id?>">
-                            <h5><?= $review->anonimo == 0 ? $review->nombre : "Anónimo"?></h5>
+                            <h5><?=$review->nombre?></h5>
                             <ul class="list-inline tags">
                                 <li class="list-inline-item"><?=$review->idmateria?></li>
                                 <li class="list-inline-item"><?=$review->tipo?></li>

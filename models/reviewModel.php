@@ -100,5 +100,15 @@ class ReviewModel extends ModeloBase{
         $query=$this->db->query("UPDATE $this->table SET votos = $votos WHERE id = $id");
         return $query;
     }
+
+    public function getByUser($column,$value){
+        $query=$this->db->query("SELECT * FROM $this->table INNER JOIN maestros ON maestros.id = review.idmaestro WHERE $column='$value'");
+ 
+        while($row = $query->fetch_object()) {
+           $resultSet[]=$row;
+        }
+         
+        return $resultSet;
+    }
 }
 ?>
