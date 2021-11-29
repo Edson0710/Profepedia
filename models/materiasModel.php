@@ -9,5 +9,6 @@ class MateriasModel extends ModeloBase{
         $this->table="materias";
         parent::__construct($this->table);
     }
+
 }
 ?>

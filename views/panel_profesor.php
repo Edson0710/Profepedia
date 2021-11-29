@@ -12,35 +12,35 @@
             <h6>CUCEI</h6>
             <ul class="list-inline tags-header">
                 <li class="list-inline-item">
-                    Tag 1
-                    <span class="tag-count">1</span>
+                    <?=$tagTipo->tipo?>
+                    <span class="tag-count"><?=$tagTipo->cont?></span>
                 </li>
                 <li class="list-inline-item">
-                    Tag 2
-                    <span class="tag-count">2</span>
+                    Tarea: <?=$tagTarea->tareas?>
+                    <span class="tag-count"><?=$tagTarea->cont?></span>
                 </li>
                 <li class="list-inline-item">
-                    Tag 3
-                    <span class="tag-count">3</span>
+                    Examen: <?=$tagExamen->examenes?>
+                    <span class="tag-count"><?=$tagExamen->cont?></span>
                 </li>
             </ul>
             <div class="row mt-4">
                 <div class="col-3 text-center">
                     <h5>General</h5>
-                    <h5>9.7</h5>
+                    <h5><?=number_format($calGeneral, 1)?></h5>
                 </div>
                 <div class="col-3 text-center">
                     <h5>Asistencia</h5>
-                    <h5>9.6</h5>
+                    <h5><?=number_format($calAsistencia, 1)?></h5>
                     </h5>
                 </div>
                 <div class="col-3 text-center">
                     <h5>Conocimiento</h5>
-                    <h5>9.5</h5>
+                    <h5><?=number_format($calConocimientos, 1)?></h5>
                 </div>
                 <div class="col-3 text-center">
                     <h5>Dificultad</h5>
-                    <h5>100</h5>
+                    <h5><?=number_format($calDificultad, 1)?></h5>
                 </div>
             </div>
         </div>
@@ -49,6 +49,9 @@
         <div class="col-lg-12 text-center">
             <nav>
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab-general" data-toggle="tab"
+                        href="#nav-home-general" role="tab" aria-controls="nav-home-general"
+                        aria-selected="true">General</a>
                     <?php foreach($materias as $materia):?>
                     <a class="nav-item nav-link" id="nav-home-tab-<?=$materia->id?>" data-toggle="tab"
                         href="#nav-home-<?=$materia->id?>" role="tab" aria-controls="nav-home-<?=$materia->id?>"
@@ -61,12 +64,40 @@
                 
             </nav>
             <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home-general" role="tabpanel" aria-labelledby="nav-home-tab-general">
+                    <div class="row">
+                        <div class="col-lg-12 text-center py-4">
+                            <h3>General</h3>
+                            <a href="../controllers/calificar_profesor_controller.php?id=<?=$id?>&clave=0" class="btn btn-evaluar mt-3">Evaluar al profesor</a>
+                        </div>
+                        <?php
+                            foreach($generales as $review):
+                        ?>
+                        <div class="col-lg-12 text-left comentario">
+                            <h5><?= $review->anonimo == 0 ? $review->nombre : "Anónimo"?></h5>
+                            <ul class="list-inline tags">
+                                <li class="list-inline-item"><?=$review->idmateria?></li>
+                                <li class="list-inline-item"><?=$review->tipo?></li>
+                                <li class="list-inline-item"><?='Tarea: '.$review->tareas?></li>
+                                <li class="list-inline-item"><?='Examen: '.$review->examenes?></li>
+                            </ul>
+                            <p><?=$review->contenido?></p>
+                            <p class="likes">
+                                <i class="fas fa-arrow-up"></i>
+                                <span><?=$review->votos?></span>
+                                <i class="fas fa-arrow-down"></i>
+                                <span style="font-size: 12px;" class="float-right"><i><?=$review->fecha?></i></span>
+                            </p>
+                            
+                        </div>
+                        <?php endforeach;?>
+                    </div>
+                </div>
                 <?php foreach($materias as $materia):?>
                 <div class="tab-pane fade show" id="nav-home-<?=$materia->id?>" role="tabpanel" aria-labelledby="nav-home-tab-<?=$materia->id?>">
                     <div class="row">
                         <div class="col-lg-12 text-center py-4">
                             <h3><?=$materia->materia?></h3>
-                            <h1 style="color: #888;">10</h1>
                             <a href="../controllers/calificar_profesor_controller.php?id=<?=$id?>&clave=<?=$materia->clave?>" class="btn btn-evaluar mt-3">Evaluar al profesor</a>
                         </div>
                         <?php
