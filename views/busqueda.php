@@ -13,7 +13,7 @@
                         foreach ($maestroM->buscarMaestro($_GET["pattern"]) as $maestro) :
                         ?>
                             <div class="col-lg-12 text-left comentario">
-                                <?
+                                <?php
                                 $calAsistencia = $reviewM->getAsistencia($maestro->id);
                                 $calConocimientos = $reviewM->getConocimientos($maestro->id);
                                 $prom = ($calAsistencia + $calConocimientos) / 2;

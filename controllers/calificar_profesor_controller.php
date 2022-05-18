@@ -4,6 +4,7 @@
     require_once('../models/materiasModel.php');
     $id = $_GET['id'];
     $clave = $_GET['clave'];
+    var_dump($id);
 
     $maestro = new MaestrosModel();
     $materiasImp = new ImparteModel();

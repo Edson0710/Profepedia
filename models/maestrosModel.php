@@ -14,6 +14,7 @@ class MaestrosModel extends ModeloBase
 
     public function buscarMaestro($pattern)
     {
+        $array = array();
         if (preg_match('~[0-9]+~', $pattern)) {
             $query = $this->db->query("SELECT * FROM imparte JOIN maestros ON maestros.id = imparte.idmaestro WHERE idmateria LIKE '%$pattern%' GROUP BY idmaestro");
 

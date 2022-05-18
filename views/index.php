@@ -16,18 +16,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($maestros as $maestro) : ?>
+                        <?php
+                        if($maestros){ 
+                        foreach ($maestros as $maestro) : 
+                        ?>
                             <tr>
                                 <td><a href="controllers/panel_profesor_controller.php?id=<?= $maestro->id ?>"><?= $maestro->nombre ?></a></td>
                                 <?php
                                 $reviewModel = new ReviewModel();
-                                $calConocimientos = $reviewModel->getConocimientos($maestro->id);
-                                $calAsistencia = $reviewModel->getAsistencia($maestro->id);
-                                $calGeneral = ($calAsistencia + $calConocimientos)/2;
+                                try{
+                                    $calConocimientos = $reviewModel->getConocimientos($maestro->id);
+                                    $calAsistencia = $reviewModel->getAsistencia($maestro->id);
+                                    $calGeneral = ($calAsistencia + $calConocimientos)/2;
+                                }catch(Exception $e){
+                                    $calGeneral = 0;
+                                }
                                 ?>
                                 <td><?=$calGeneral?></td>
                             </tr>
-                        <?php endforeach; ?>
+                        <?php 
+                        endforeach;
+                        }
+                        ?>
 
                 </table>
                 <a class="btn btn-agregar my-3 <?=(!isset($_SESSION['user'])) ? 'disabled' : '' ?>" href="controllers/agregar_profesor_controller.php">Agregar profesor</a>
@@ -35,7 +45,8 @@
 
         </div>
         <div class="col-md-4">
-            <?php if($_SESSION['user']): ?>
+            <?php 
+            if(isset($_SESSION['user'])): ?>
                 <div class="card">
                     <div class="card-block">
                         <div class="card-title p-3">

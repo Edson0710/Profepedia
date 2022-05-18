@@ -25,6 +25,7 @@
                     aria-labelledby="nav-home-tab-general">
                     <div class="row">
                         <?php
+                            if($generales):
                             foreach($generales as $review):
                         ?>
                         <div class="col-lg-12 text-left comentario" id="<?=$review->id?>">
@@ -39,6 +40,7 @@
                         </div>
                         <?php
                             endforeach;
+                        endif;
                         ?>
                     </div>
                 </div>

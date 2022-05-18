@@ -7,9 +7,9 @@ class Conectar{
     private $servername;
 
     public function __construct(){
-        $this -> password = "Administrador-2021";
-        $this -> user = "u300282865_admin";
-        $this -> dbName = "u300282865_profepedia";
+        $this -> password = "";
+        $this -> user = "root";
+        $this -> dbName = "profepedia";
         $this -> servername = "localhost";
     }
 

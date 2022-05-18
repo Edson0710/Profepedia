@@ -6,7 +6,7 @@ class ModeloBase{
     private $table;
     protected $db;
     private $conectar;
-    private $count = 2;
+    private $count = 3;
  
     public function __construct($table) {
         $this->table=(string) $table;
@@ -25,6 +25,7 @@ class ModeloBase{
      
     public function getAll(){
         $query=$this->db->query("SELECT * FROM $this->table");
+        $array=array();
         while($row=$query->fetch_object()){
             $array[]=$row;
         }

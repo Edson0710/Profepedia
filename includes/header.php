@@ -1,7 +1,9 @@
 <?php
 // $count = 3;
-$count = 2;
-session_start();
+$count = 3;
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -51,12 +53,13 @@ session_start();
             if ($verify == false) {
                 $error = "Fallo al autenticar usuario";
             } else {
-                session_start();
+                if (!isset($_SESSION)) {
+                    session_start();
+                }
                 $_SESSION["user"] = $usuario[0];
             }
         }
     }
-
 
     ?>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
